@@ -1,0 +1,38 @@
+启动service
+-----------
+通过startService(intent)来启动；
+
+------------------------------
+启动servi并传参
+--------------
+在mian里通过intent.puExtra("", )传参；
+在service里通过 
+@override onStartCommand(Intent intent, int, int){
+intent.getStringExtra(" ");}
+来获取参数
+
+-------------
+
+绑定service
+-----------
+通过bindService(intent,Main.this,Context.BIND_AUTO_CREATE)来绑定一个service，同时实现onServiceConnected和onServiceDisconnt方法；
+同时，public IBinder onBind(Intent intent) {return null;}。
+
+-------------------
+
+
+绑定并传参
+------------
+现在Service里新建一个类bind，扩展自Binder类，并且实现data的set get方法。
+class bind extends Binder{
+
+}
+
+同时，通过
+public IBinder onBind(Intent intent) {
+
+              return  new bind();
+    }
+将bind类返回。
+
+在Main里，实例化bind,并通过bind.setData()传参；
