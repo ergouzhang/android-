@@ -1,0 +1,19 @@
+动态注册一个broadcast：
+
+Main:
+实例化BroadcastReceiver:
+BroadcastReceiver broadcastreceiver=new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {}};
+            
+          定义intentfilter:
+          IntentFilter intentfilter=new IntentFiler(" action ");
+          注册:
+          registerReceiver(broadcastreceiver,intentfiler);
+          
+Main2:
+
+Intent intent=new Intent("action");
+sendbroadcast(intent);
+
+注意，Intent()里的参数可为String action 或者Context packageContext, Class cls。
