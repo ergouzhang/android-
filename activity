@@ -1,0 +1,16 @@
+activity之间传参
+-------------------
+通过intent获取参数： Intent intent=getIntent(); intent.getExtra();
+or
+String data=getIntent().getExtra();
+-------------------------------
+
+activity获取返回值
+-------------------
+Main:
+通过startActivityforResult(Intent intent, int data);启动另一个Activity。
+通过@override onActivityResult(int,int,Intent)的Intent来获取返回值。
+Main2:
+通过setResult(int,Intent);finish();来传递返回值。
+
+----------------------------
