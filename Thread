@@ -1,0 +1,16 @@
+ new Thread( )
+ {
+            @Override
+            public void run() {
+                super.run();
+                while(true)
+                {System.out.println("~~~~~~~~~~~~~~~~~~~" + data);
+                    try {
+                        sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }}    }.start();
+                
+                -----
+                .start()启动另一个线程；而.run()只是调用Thread的一个方法，还是本线程。
