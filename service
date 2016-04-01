@@ -35,4 +35,13 @@ public IBinder onBind(Intent intent) {
     }
 将bind类返回。
 
-在Main里，实例化bind,并通过bind.setData()传参；
+在Main里，实例化bind：
+
+MyService.bind binder;
+------OR
+MyService myservice=new MyService();
+MyService.bind binder=myservice.new bind();
+没有静态(static)的类中类不能使用外部类进行.操作,必须用实例来进行实例化类中类. 
+
+
+并通过bind.setData()传参,注意，bind.setData不可与bindService()在同一方法中，需在bindService之后。
